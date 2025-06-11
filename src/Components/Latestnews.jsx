@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useContext } from 'react';
-import Maincontext from '../Context/Maincontext';
+import { mainContext } from '../Context/Maincontext';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -11,7 +11,7 @@ const LatestNews = () => {
   const cursorRef = useRef(null);
   const tagsRef = useRef([]);
   const headingsRef = useRef([]);
-
+  const {news } = useContext(mainContext)
   useEffect(() => {
     const ctx = gsap.context(() => {
       // Title and Button Animations
@@ -121,7 +121,6 @@ const LatestNews = () => {
     };
   }, []);
 
-  const {news} = useContext(Maincontext)
 
 
   return (

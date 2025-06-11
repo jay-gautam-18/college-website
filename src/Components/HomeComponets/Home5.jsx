@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import Maincontext from '../../Context/Maincontext';
+import { mainContext } from '../../Context/Maincontext';
 gsap.registerPlugin(ScrollTrigger);
 
 const Home5 = () => {
@@ -9,7 +9,7 @@ const Home5 = () => {
   const bottomLine = useRef(null);
   const verticalLine = useRef(null);
   const sections = useRef([]);
-  const {values} = useContext(Maincontext)
+  const {values} = useContext(mainContext)
 useEffect(() => {
   const ctx = gsap.context(() => {
     // Animate horizontal lines

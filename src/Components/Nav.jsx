@@ -3,14 +3,14 @@ import { FiSearch } from 'react-icons/fi';
 import { RxHamburgerMenu } from 'react-icons/rx';
 import { IoClose } from 'react-icons/io5';
 
-import { MainContext } from '../Context/Maincontext';
+import { mainContext } from '../Context/Maincontext';
 
 
 
 const Nav = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeMenu, setActiveMenu] = useState(null);
-  const { Nav, setNav } = useContext(MainContext);
+  const { Nav, setNav } = useContext(mainContext);
 
   return (
     <>
@@ -103,21 +103,20 @@ const Nav = () => {
           <span>csr</span>
           <span>icmmci-2022</span>
           <a href="https://admissions.lnct.ac.in/">
-  <span className="text-sm ">ADMITION 2025-2026</span> 
-</a>
-       <a href="https://lnct.ac.in/vc.pdf">
-  <span className="text-sm ">Voice of lnct</span> 
-</a>
- <a href="http://lnctbhopal.in/">
-  <span className="text-sm ">Lnct Bhopal</span> 
-</a>
- <a href="https://lncpbhopal.in/">
-  <span className="text-sm ">lncp Bhopal</span> 
-</a>
- <a href="https://lnct.ac.in/wp-content/uploads/2021/04/Lakshmi-Narain-College-of-Technology-ISTE-Certificate.pdf">
-  <span className="text-sm ">Tie Ups</span> 
-</a>
-
+          <span className="text-sm ">ADMITION 2025-2026</span> 
+          </a>
+          <a href="https://lnct.ac.in/vc.pdf">
+          <span className="text-sm ">Voice of lnct</span> 
+          </a>
+          <a href="http://lnctbhopal.in/">
+            <span className="text-sm ">Lnct Bhopal</span> 
+          </a>
+          <a href="https://lncpbhopal.in/">
+            <span className="text-sm ">lncp Bhopal</span> 
+          </a>
+          <a href="https://lnct.ac.in/wp-content/uploads/2021/04/Lakshmi-Narain-College-of-Technology-ISTE-Certificate.pdf">
+            <span className="text-sm ">Tie Ups</span> 
+          </a>
           <span>Emergency</span>
         </div>
       </div>

@@ -1,14 +1,44 @@
-import React from 'react'
+import React, { useEffect, useRef } from "react";
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
 import Home4 from './Home4'
+gsap.registerPlugin(ScrollTrigger);
+
+
 
 const Home3 = () => {
+  const containerRef = useRef(null);
+
+  useEffect(() => {
+    const sections = containerRef.current.querySelectorAll(".slide-in");
+
+    sections.forEach((el) => {
+      gsap.fromTo(
+        el,
+        { opacity: 0, y: 50 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          scrollTrigger: {
+            trigger: el,
+            start: "top 80%",
+            toggleActions: "play none none none",
+          },
+        }
+      );
+    });
+
+    ScrollTrigger.refresh();
+  }, []);
+
   return (
     <>
-   <div className="bg-[#fdfbf6]  px-6 py-10">
-    <div className="w-full mx-auto  flex flex-col justify-between md:flex-row gap-10">
-
-        {/* Left Section: Text & Button */}
-        <div className=" mr-5 md:w-1/3 sticky space-y-6">
+    <div className="min-h-screen bg-[#f8f6ef] px-4 py-16">
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-10">
+        {/* Left Static Side */}
+        <div className="w-full md:w-2/5 md:sticky  md:top-24 md:h-[calc(70vh-6rem)] flex flex-col justify-center p-6  ">
+         <div className=" mr-5 md:w-1/3 sticky space-y-6">
             <div >
                 <h2 className="md:text-7xl text-5xl font-[400] leading-tight">FEATURED<br />WORK</h2>
                 <p className="mt-2 tracking-wide  text-2xl text-gray-700 w-[70vw] md:max-w-[20vw]">
@@ -18,11 +48,10 @@ const Home3 = () => {
             <button className="md:text-xl text-lg border bg-black text-white font-[300] px-10  md:px-6 md:py-1.5 rounded-lg hover:bg-transparent hover:text-black transition">See All Work</button>
         </div>
         <div className='h-auto w-[1px]  bg-black'></div>
-        
-        {/* Right Section: Projects Grid */}
-        <div className="md:w-2/3 md:p-5 space-y-6">
-
-        {/* Large Featured Image */}
+        </div>
+        {/* Right Scroll Side */}
+        <div ref={containerRef} className="w-full md:w-4/5 border-l pl-4 space-y-12">
+             {/* Large Featured Image */}
         <div>
             <img src="https://lnct.ac.in/wp-content/uploads/2021/05/LNCT-Group-of-colleges-20.jpg" alt="Dancing Stars" className="rounded-2xl w-full" />
             <div className="flex justify-between text-sm mt-3">
@@ -69,15 +98,13 @@ const Home3 = () => {
             </div>
             </div>
         </div>
-
         </div>
-    </div>
+      </div>
     </div>
     <hr />
     <Home4/>
     </>
+  );
+};
 
-  )
-}
-
-export default Home3
+export default Home3;
