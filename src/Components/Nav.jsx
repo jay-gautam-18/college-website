@@ -48,8 +48,8 @@ const Nav = () => {
             alt="Harvard Logo"
             className="h-10"
           />
-          <button onClick={() => setMenuOpen(false)} className="text-white flex gap-2 items-center">
-            Close <IoClose size={24} />
+          <button onClick={() => setMenuOpen(false)} className="text-white/70 hover:text-white flex gap-2 text-3xl items-center">
+            Close <IoClose size={54} />
           </button>
         </div>
 
@@ -60,7 +60,7 @@ const Nav = () => {
               <div
                 key={index}
                 onClick={() => setActiveMenu(index)}
-                className={`cursor-pointer transition-all duration-300 ease-in-out ${
+                className={`cursor-pointer tracking-wide transition-all pb-5 w-2/3 duration-300 ease-in-out ${
                   activeMenu === index ? 'text-white border-b border-white' : 'text-gray-400'
                 }`}
               >
@@ -76,16 +76,16 @@ const Nav = () => {
                 className="transition-all duration-500 ease-in-out opacity-100 translate-x-0"
                 key={activeMenu}
               >
-                <h2 className="text-xl font-semibold mb-2 flex items-center gap-1">
-                  {Nav[activeMenu].title} <span className="text-lg">→</span>
+                <h2 className="text-4xl font-semibold mb-2 flex items-center gap-1">
+                  {Nav[activeMenu].title} <span className="text-3xl">→</span>
                 </h2>
-                <p className="text-sm text-gray-300 mb-6 max-w-md">
+                <p className="text-lg text-gray-300 mb-6 max-w-md">
                   {Nav[activeMenu].description}
                 </p>
-                <ul className="space-y-4 font-semibold text-sm">
+                <ul className="space-y-4 font-[400] tracking-wider text-white/70  text-xl">
                   {Nav[activeMenu].links.map((link, i) => (
                     <li key={i}>
-                      <a href={link.path} className="hover:underline">{link.label}</a>
+                      <a href={link.path} className="hover:underline hover:opacity-100">{link.label}</a>
                     </li>
                   ))}
                 </ul>

@@ -55,15 +55,33 @@ app.post('/submit', async (req, res) => {
 
     // Send Email (log any error here)
     await transporter.sendMail({
-      from: `"Form Bot" <${process.env.EMAIL_USER}>`,
+      from: "LNCT college",
       to: email,
-      subject: 'Thanks for your submission',
-      text: `Hello ${name}, we received your submission.`
+      subject: 'Admission Enquiry Confirmation',
+      text: `Dear ${name},
+
+  Thank you for completing the registration form for LNCT College. We have successfully received your details and our admissions team will review your submission.
+
+  We will contact you soon on your provided phone number (${phone}) to discuss the next steps.
+
+  If you have any questions, feel free to reply to this email.
+
+  Best regards,
+  LNCT College Admissions Team`
     });
 
     // Send SMS (optional)
     await twilioClient.messages.create({
-      body: `Hi ${name}, thanks for your submission.`,
+      body: `Dear ${name},
+
+  Thank you for completing the registration form for LNCT College. We have successfully received your details and our admissions team will review your submission.
+
+  We will contact you soon on your provided phone number (${phone}) to discuss the next steps.
+
+  If you have any questions, feel free to reply to this email.
+
+  Best regards,
+  LNCT College Admissions Team`,
       from: process.env.TWILIO_PHONE,
       to: phone
     });

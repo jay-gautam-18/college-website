@@ -6,7 +6,6 @@ const App = () => {
 
   return (
     <div className="bg-[#f9f7f1] syne-text">
-      {/* <Loader  /> */}
       <Mainroutes/>
     </div>
     // <div>{msg}</div>

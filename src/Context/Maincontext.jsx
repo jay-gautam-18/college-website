@@ -117,42 +117,72 @@ const Maincontext = (props) => {
   ]);
   const [values, setvalues] = useState([
               {
-                  number: '01',
-                  title: 'VISION',
-                  desc: "Our relentless pursuit of a shared vision fuels our creativity and propels us forward. With clarity and foresight, we craft strategies that align with our clients' goals and aspirations...",
+                  number: '1200+',
+                  title: 'Publish',
+                  desc: "Publications in National & International Journals",
                 },
                 {
-                    number: '02',
-                    title: 'INNOVATION',
-                    desc: "Innovation is at the core of everything we do. We embrace curiosity, explore uncharted territories, and challenge the status quo...",
+                    number: '20+',
+                    title: 'Innovation',
+                    desc: "Industry Sponsored Advanced Research Labs",
                 },
                 {
-                    number: '03',
-                    title: 'CONNECTION',
-                    desc: "We believe in the power of connection. We strive to build bridges between brands and their audiences, fostering genuine relationships...",
+                    number: '54+',
+                    title: 'Departments',
+                    desc: "Departmental Research Groups",
+                },
+                {
+                    number: '191+',
+                    title: 'Patents',
+                    desc: "Patents filed Successfully by LNCT Group",
                 },
             ])
 
-   const [news, setnews] = useState(  [
+   const [blogs, setnews] = useState(  [
     {
-      img: 'https://imgs.search.brave.com/7y447t9bjRQ_91yTxjzr-76Rmvch5yRFMBiDDe3ISPY/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/Y29sbGVnZWJhdGNo/LmNvbS9zdGF0aWMv/Y2xnLWdhbGxlcnkv/bG5jdC1ncm91cC1v/Zi1jb2xsZWdlcy1i/aG9wYWwtMjE1MDkw/LmpwZw',
-      tag: 'BRANDING',
-      title: 'Things to Look for When Comparing Branding Alternatives',
+      img: 'https://lnct.ac.in/wp-content/uploads/2024/02/How-Will-Artificial-Intelligence-Affect-1024x1024.jpeg',
+      tag: 'BLOG',
+      title: 'How Will Artificial Intelligence Affect Career Opportunities for MCA Graduates 2025-30',
     },
     {
-      img: 'https://imgs.search.brave.com/xPm4RETCreM5jsxHpKdDlcAFUZ1-kalbJ29HQXaYKHU/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/Y29sbGVnZWJhdGNo/LmNvbS9zdGF0aWMv/Y2xnLWdhbGxlcnkv/bG5jdC1ncm91cC1v/Zi1jb2xsZWdlcy1i/aG9wYWwtMjE1MDk0/LmpwZw',
-      tag: 'BRANDING',
-      title: '5 Stand-out Features of Branding You Should Know',
+      img: 'https://lnct.ac.in/wp-content/uploads/2023/08/ROBOTICS-AUTOMATION-1024x1024.jpeg',
+      tag: 'BLOG',
+      title: 'Robotics & Automation Trends and Innovations to Watch in 2025',
     },
     {
-      img: 'https://imgs.search.brave.com/xPm4RETCreM5jsxHpKdDlcAFUZ1-kalbJ29HQXaYKHU/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/Y29sbGVnZWJhdGNo/LmNvbS9zdGF0aWMv/Y2xnLWdhbGxlcnkv/bG5jdC1ncm91cC1v/Zi1jb2xsZWdlcy1i/aG9wYWwtMjE1MDk0/LmpwZw',
-      tag: 'BRANDING',
-      title: 'Branding: What Real Customers Have to Say',
+      img: 'https://lnct.ac.in/wp-content/uploads/2023/08/AGRICULTURE-SECTOR-1024x1024.jpeg',
+      tag: 'BLOG',
+      title: 'Why should you make your career in the agriculture sector?',
+    },
+    {
+      img: 'https://lnct.ac.in/wp-content/uploads/2024/02/SCOPE-OF-VLSI-DESIGN-AFTER-AI-EVOLUTION-2025-1024x1024.jpeg',
+      tag: 'BLOG',
+      title: 'Scope of VLSI Design After AI Evolution',
+    },
+    {
+      img: 'https://lnct.ac.in/wp-content/uploads/2024/02/Bard-vs-Gemini-1024x1024.jpeg',
+      tag: 'BLOG',
+      title: 'Google’s Bard has transformed into Gemini What’s Different?',
+    },
+    {
+      img: 'https://lnct.ac.in/wp-content/uploads/2021/04/Future-of-Blockchain-Technology-by-2025-1-1024x1024.jpeg',
+      tag: 'BLOG',
+      title: 'Exploring Biotechnology: Innovations in Health and Agriculture',
+    },
+    {
+      img: 'https://lnct.ac.in/wp-content/uploads/2023/08/AYURVEDA-FOR-MENTAL-HEALTH-1024x1024.jpeg',
+      tag: 'BLOG',
+      title: 'Ayurveda for Mental Health Addressing Mental Health Stigma, Promoting Awareness and Support',
+    },
+    {
+      img: 'https://lnct.ac.in/wp-content/uploads/2023/08/ARTIFICIAL-INTELLIGENCE-IN-CYBER-SECURITY-1024x1024.jpeg',
+      tag: 'BLOG',
+      title: 'Artificial Intelligence in Cybersecurity Enhancing Digital Defense',
     },
   ])         
 //data ese hi lagay hai abhi baad mei chnge kar denge
   return (
-    <mainContext.Provider value={{ Nav, setNav, data, setdata , values, setvalues ,news , setnews}}>
+    <mainContext.Provider value={{ Nav, setNav, data, setdata , values, setvalues ,blogs , setnews}}>
       {props.children}
     </mainContext.Provider>
   );

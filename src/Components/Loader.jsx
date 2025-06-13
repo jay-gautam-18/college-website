@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
+import cap from '/graduationcap.png'
 const Loader = () => {
      let [showContent, setShowContent] = useState(false);
   useGSAP(() => {
@@ -133,7 +134,7 @@ const Loader = () => {
         </svg>
     </div>
     {showContent && <div className='loader absolute top-0 left-0 z-100 h-[78vh] md:h-screen w-full flex justify-center overflow-hidden scrollbar-hidden'>
-      <img id='scholarHat' className='scholarHat absolute md:top-[-20%] z-10'  src="./graduationcap.png"/>
+      <img id='scholarHat' className='scholarHat absolute md:top-[-20%] z-10'  src={cap} />
     <div className=' md:h-4/5 w-full  bg-[#674261]'>
       <svg id="svg2" className="u-icon u-icon--separator-main js-section-separator-main absolute w-[300vw]   bottom-0 fill-[#674261] z-4" viewBox="0 0 3876 160"
         xmlns="http://www.w3.org/2000/svg">

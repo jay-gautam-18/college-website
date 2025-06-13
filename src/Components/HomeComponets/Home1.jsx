@@ -1,34 +1,95 @@
-import React from 'react'
-import Home2 from './Home2'
+import React, { useRef, useEffect } from 'react';
+import gsap from 'gsap';
+import ScrollTrigger from 'gsap/ScrollTrigger';
+import Home2 from "./Home2"
+gsap.registerPlugin(ScrollTrigger);
 
 const Home1 = () => {
+  const topLine = useRef(null);
+  const bottomLine = useRef(null);
+  const midLine = useRef(null);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      // Horizontal line animation
+      gsap.from([topLine.current, bottomLine.current], {
+        scrollTrigger: {
+          trigger: topLine.current,
+          start: 'top 90%',
+        },
+        width: 0,
+        duration: 1,
+        ease: 'power2.out',
+      });
+
+      // Vertical line animation
+      gsap.from(midLine.current, {
+        scrollTrigger: {
+          trigger: midLine.current,
+          start: 'top 80%',
+        },
+        height: 0,
+        duration: 1,
+        ease: 'power2.out',
+      });
+    });
+
+    return () => ctx.revert(); // Clean up
+  }, []);
+
   return (
     <>
-    <div className="flex flex-col md:flex-row  justify-between px-8 py-16  h-auto w-full gap-10">
-        {/* Left content - Text */}
-        <div className="md:w-1/2 space-y-6 mt-5">
+      <div className="flex flex-col w-full h-auto">
+
+        {/* Top Horizontal Line */}
+        <div className="w-full h-[5%] flex justify-center items-center">
+          <div ref={topLine} className="w-[95%] h-[1px] bg-black mt-10" />
+        </div>
+
+        {/* Content Section */}
+        <div className="flex flex-col md:flex-row justify-between px-8 py-16 min-h-[60vh] w-full gap-10">
+
+          {/* Left Text */}
+          <div className="md:w-1/2 space-y-6 mt-5">
             <h1 className="text-6xl md:text-8xl tracking-[1px] font-light leading-tighter">
-            We are a digital <br /> agency from <br /> Lisbon.
+              Join The League of Achievers!
             </h1>
-            <p className="text-3xl  text-gray-700">
-            Elevating brands through creative digital <br />
-            solutions, proudly representing Lisbon's <br />
-            vibrant innovation.
+            <p className="text-3xl text-gray-700">
+              LNCT Group of College is one of the Top engineering <br />
+              college in Bhopal, MP and Central India. <br />
+              LNCT Synonymous with excellence in <br />
+              higher education with <span className="font-bold">32+ </span> Years <br />
+              of Academic Excellence and Discipline.
             </p>
-        </div>
+            <button className="px-5 py-2 bg-black text-white rounded-lg text-xl border transition hover:text-black hover:bg-transparent font-[500]">
+              Admission Open
+            </button>
+          </div>
 
-        {/* Right content - Image */}
-        <div className="md:w-1/2">
-            <div className="rounded-2xl  overflow-hidden shadow-md">
-            <img src="https://lnct.ac.in/wp-content/uploads/2021/05/LNCT-Group-of-colleges-20.jpg" alt="Team Working" className=" md:h-[32vw]" />
+          {/* Vertical Line */}
+          <div className="hidden md:flex justify-center items-center">
+            <div ref={midLine} className="w-[1px] h-full bg-black" />
+          </div>
+
+          {/* Right Image */}
+          <div className="md:w-1/2">
+            <div className="rounded-2xl overflow-hidden shadow-md">
+              <img
+                src="https://lnct.ac.in/wp-content/uploads/2021/05/LNCT-Group-of-colleges-20.jpg"
+                alt="Team Working"
+                className="md:h-[32vw]"
+              />
             </div>
+          </div>
         </div>
-    </div>
-    <hr />
-    <Home2/>
-    </>
 
-  )
-}
+        {/* Bottom Horizontal Line */}
+        <div className="w-full h-[5%] flex justify-center items-center">
+          <div ref={bottomLine} className="w-[95%] h-[1px] bg-black mb-16" />
+        </div>
+      </div>
+        </>
+  );
+};
 
-export default Home1
+export default Home1;

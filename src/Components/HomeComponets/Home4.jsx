@@ -67,57 +67,72 @@ const Home4 = () => {
 
   return (
     <>
-    <div ref={sectionRef} className=" md:w-full flex items-center justify-center p-8">
-      <div className="grid grid-cols-1 md:grid-cols-[4fr_0.5fr_2fr]  md:w-full max-w-8xl">
-        
-        {/* Left Side */}
-        <div className="md:p-10 mb-10">
-          <p
-            ref={taglineRef}
-            className="uppercase tracking-widest text-lg text-gray-700 mb-4"
+      <div ref={sectionRef} className="md:w-full flex items-center justify-center p-8">
+        <div className="grid grid-cols-1 md:grid-cols-[4fr_0.5fr_2fr] md:w-full max-w-8xl">
+          
+          {/* Left Side */}
+          <div className="md:p-10 mb-10">
+            <p
+              ref={taglineRef}
+              className="uppercase tracking-widest text-lg text-gray-700 mb-4"
             >
-            How we work
-          </p>
-          <h1
-            ref={headingRef}
-            className="md:text-8xl text-4xl font-thin md:leading-22 tracking-tight  text-black"
-          >
-            We help our clients<br />
-            succeed with<br />
-            innovative<br />
-            strategies.
-          </h1>
-        </div>
+              How we work
+            </p>
+            <h1
+              ref={headingRef}
+              className="md:text-8xl text-4xl font-thin md:leading-22 tracking-tight text-black"
+            >
+              We help our Students<br />
+              succeed with<br />
+              innovative<br />
+              strategies.
+            </h1>
+          </div>
 
-        {/* Custom Vertical Line */}
-        <div className="hidden md:flex justify-center">
-          <div
-            ref={lineRef}
-            className="w-px bg-black md:h-[80%] my-auto"
+          {/* Custom Vertical Line */}
+          <div className="hidden md:flex justify-center">
+            <div
+              ref={lineRef}
+              className="w-px bg-black md:h-[80%] my-auto"
             ></div>
-        </div>
+          </div>
 
-        {/* Right Side */}
-        <div className="md:p-10 flex flex-col justify-between h-[30vh]  md:h-[70vh]">
-          <p
-            ref={paraRef}
-            className=" md:text-2xl font-light text-gray-800 md:leading-relaxed"
-            >
-            Through careful analysis, creative thinking, and a deep understanding of their goals,
-            we empower businesses to surpass expectations and thrive in today's dynamic and
-            competitive landscape.
-          </p>
+          {/* Right Side */}
+          <div className="md:p-10 flex flex-col justify-between h-[90vh]">
+            <ul className="list-disc pl-5 space-y-4">
+              <li>
+                <p
+                  ref={paraRef}
+                  className="md:text-2xl font-light text-gray-800 md:leading-relaxed"
+                >
+                  Other than Best Academics and Placements, Providing Best Sports facilities also. Producing National & International Players in Drop Row Ball, Base Ball, Throw Ball, Kabbaddi etc.
+                </p>
+              </li>
+              <li>
+                <p
+                  className="md:text-2xl font-light text-gray-800 md:leading-relaxed"
+                >
+                  Through careful analysis, creative thinking, and a deep understanding of their goals, we empower businesses to surpass expectations and thrive in today's dynamic and competitive landscape.
+                </p>
+              </li>
+              <li>
+                <p
+                  className="md:text-2xl font-light text-gray-800 md:leading-relaxed"
+                >
+                  Through careful analysis, creative thinking, and a deep understanding of their goals, we empower businesses to surpass expectations and thrive in today's dynamic and competitive landscape.
+                </p>
+              </li>
+            </ul>
 
-          <div className="flex justify-center mt-4">
-            <button className="bg-black text-white px-3 py-1 md:px-6 md:py-2 rounded-lg hover:bg-gray-900 transition">
-              Get Template
-            </button>
+            <div className="flex justify-center mt-4">
+              <a href='https://www.aicte-india.org/feedback/' className="bg-black text-white px-3 py-1 md:px-6 md:py-2 rounded-lg hover:bg-gray-900 transition">
+                Aicte Feedback
+              </a>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <Home5/>
-              </>
+    </>
   );
 };
 

@@ -1,21 +1,19 @@
 import Nav from '../Components/Nav'
-import Home1 from '../Components/HomeComponets/Home1'
-import Ourservices from '../Components/Ourservices'
-import LatestNews from '../Components/Latestnews'
+import LatestNews from '../Components/LatestBlogs'
 import LnctFooter from '../Components/LnctFooter'
-import HoverRevealCard from '../Components/HoverRevealCard'
-import RollingGallery from '../Components/RollingGallery'
+import StackHome from '../Components/HomeComponets/stackHome'
+import NewsMedia from '../Components/NewsMedia'
+
 const Home = () => {
   return (
     <>
+    {/* <Loader/> */}
     <Nav/>
-    <hr />
-    <Home1/>
-    <Ourservices/>
+    <StackHome/>
+    <NewsMedia/>
     <LatestNews/>
     <LnctFooter/>
-    <HoverRevealCard/>
-    <RollingGallery autoplay={true} pauseOnHover={true} />
+    {/* <Gallery /> */}
     </>
   )
 }

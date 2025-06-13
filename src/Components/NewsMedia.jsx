@@ -4,22 +4,40 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const cards = [
+const News = [
   {
-    title: "Web Development",
-    image: "https://source.unsplash.com/800x600/?code",
+    title: "National Startup Meet & Seminar organized by MSM",
+    image: "https://lnct.ac.in/wp-content/uploads/2025/06/National-Startup-Meet-Seminar-organized-by-MSM-1024x682.jpg",
+    date: "June 12, 2025",
   },
   {
-    title: "UI Design",
-    image: "https://source.unsplash.com/800x600/?design",
+    title: "Dr. Anupam Chouksey Represents India on Global Stage at ILC Geneva",
+    image: "https://lnct.ac.in/wp-content/uploads/2025/06/Dr.-Anupam-Chouksey-Represents-India-on-Global-Stage-at-ILC-Geneva-819x1024.jpg",
+    date: "June 12, 2025",
   },
   {
-    title: "Team Collaboration",
-    image: "https://source.unsplash.com/800x600/?team",
+    title: "10 Square Cricket Championship 2025",
+    image: "https://lnct.ac.in/wp-content/uploads/2025/06/10-Square-Cricket-Championship-2025-1024x682.jpg",
+    date: "June 12, 2025",
+  },
+  {
+    title: "LNCP Proudly Celebrated World Environment Day",
+    image: "https://lnct.ac.in/wp-content/uploads/2025/06/LNCP-Proudly-Celebrated-World-Environment-Day-1024x768.jpg",
+    date: "June 5, 2025",
+  },
+  {
+    title: "Slogan writing competition & Discussion organised by QNC on the theme Beat Plstic Pollution",
+    image: "https://lnct.ac.in/wp-content/uploads/2025/06/Slogan-writing-competition-Discussion-organised-by-QNC-on-the-theme-Beat-Plstic-Pollution.jpg",
+    date: "June 5, 2025",
+  },
+  {
+    title: "Congratulations to the Stars of CSE-IoT",
+    image: "https://lnct.ac.in/wp-content/uploads/2025/06/Congratulations-to-the-Stars-of-CSE-IoT-819x1024.jpg",
+    date: "June 3, 2025",
   },
 ];
 
-const HoverRevealCard = () => {
+const NewsMedia = () => {
   const topLine = useRef(null);
   const bottomLine = useRef(null);
   const cardRefs = useRef([]);
@@ -65,13 +83,13 @@ const HoverRevealCard = () => {
 
   return (
     <div className="min-h-screen bg-[#f8f6ef] px-4 sm:px-6 py-12 sm:py-16">
-      <div ref={topLine} className="w-full max-w-6xl h-[2px] bg-black mb-6 mx-auto lg:overflow-hidden" />
-      <h2 className="text-3xl sm:text-4xl font-bold text-center mb-10 sm:mb-12">NEWS</h2>
-      <div ref={bottomLine} className="w-full max-w-6xl h-[2px] bg-black mb-10 overflow-hidden sm:mb-16 mx-auto" />
+      <div ref={topLine} className="md:w-[90%]   h-[1px] bg-black mb-6 mx-auto lg:overflow-hidden" />
+      <h2 className="text-3xl sm:text-7xl font-bold text-center mb-10 sm:mb-12">News & Media</h2>
+      <div ref={bottomLine} className="md:w-[90%]  h-[1px] bg-black mb-10 overflow-hidden sm:mb-16 mx-auto" />
 
       <div className="w-full">
         <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-          {cards.map((card, index) => (
+          {News.map((card, index) => (
             <div
               key={index}
               ref={(el) => (cardRefs.current[index] = el)}
@@ -88,8 +106,9 @@ const HoverRevealCard = () => {
               <div
                 ref={(el) => (overlayRefs.current[index] = el)}
                 data-active="false"
-                className="absolute bottom-0 left-0 w-full h-full bg-black bg-opacity-50 flex items-end transform translate-y-full"
+                className="absolute bottom-0 left-0 w-full h-full  bg-black/50 flex flex-col justify-between items-start transform translate-y-full"
               >
+                <h1 className="text-white text-base sm:text-lg font-semibold p-4">{card.date}</h1>
                 <p className="text-white text-base sm:text-lg font-semibold p-4">
                   {card.title}
                 </p>
@@ -102,4 +121,4 @@ const HoverRevealCard = () => {
   );
 };
 
-export default HoverRevealCard;
+export default NewsMedia;

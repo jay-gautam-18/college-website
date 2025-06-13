@@ -11,7 +11,7 @@ const LatestNews = () => {
   const cursorRef = useRef(null);
   const tagsRef = useRef([]);
   const headingsRef = useRef([]);
-  const {news } = useContext(mainContext)
+  const {blogs } = useContext(mainContext)
   useEffect(() => {
     const ctx = gsap.context(() => {
       // Title and Button Animations
@@ -140,28 +140,26 @@ const LatestNews = () => {
 
       {/* Title and Button */}
       <div className="flex justify-between items-center  mb-10">
-        <h2 className="text-3xl md:text-5xl font-semibold">LATEST NEWS</h2>
-        <button className="border border-black px-4 py-2 text-xs tracking-widest">
-          SEE ALL
-        </button>
+        <h2 className="text-3xl md:text-5xl font-semibold">LATEST BLOGS & POST</h2>
+        
       </div>
 
       {/* Horizontal Line for animation */}
     
 
       {/* Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-10 border-t border-black pt-10 relative">
+      <div className="flex flex-row w-full max-w-full overflow-x-auto scrollbar-hidden gap-10 border-t border-black pt-10 relative">
         {/* Vertical line between first and second column */}
         
-        {news.map((item, i) => (
+        {blogs.map((item, i) => (
           <div
             key={i}
-            className={`group  relative md:border-r  last:border-r-0 md:border-black pr-5`}
+            className={`group  relative min-w-[20vw] max-w-xs md:border-r last:border-r-0 md:border-black pr-5`}
           >
             <div className="overflow-hidden  rounded-xl relative image-hover-area">
               <img
                 src={item.img}
-                alt="news"
+                alt="blogs"
                 className="rounded-xl  w-full h-60 object-cover transition-transform duration-300 group-hover:scale-105"
               />
             </div>
