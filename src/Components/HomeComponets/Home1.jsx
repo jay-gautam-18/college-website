@@ -4,7 +4,7 @@ import ScrollTrigger from 'gsap/ScrollTrigger';
 import Home2 from "./Home2"
 gsap.registerPlugin(ScrollTrigger);
 
-const Home1 = () => {
+const Home1 = ({image,heading,description}) => {
   const topLine = useRef(null);
   const bottomLine = useRef(null);
   const midLine = useRef(null);
@@ -52,14 +52,10 @@ const Home1 = () => {
           {/* Left Text */}
           <div className="md:w-1/2 space-y-6 mt-5">
             <h1 className="text-6xl md:text-8xl tracking-[1px] font-light leading-tighter">
-              Join The League of Achievers!
+              {heading}
             </h1>
             <p className="text-3xl text-gray-700">
-              LNCT Group of College is one of the Top engineering <br />
-              college in Bhopal, MP and Central India. <br />
-              LNCT Synonymous with excellence in <br />
-              higher education with <span className="font-bold">32+ </span> Years <br />
-              of Academic Excellence and Discipline.
+              {description}
             </p>
             <button className="px-5 py-2 bg-black text-white rounded-lg text-xl border transition hover:text-black hover:bg-transparent font-[500]">
               Admission Open
@@ -75,7 +71,7 @@ const Home1 = () => {
           <div className="md:w-1/2">
             <div className="rounded-2xl overflow-hidden shadow-md">
               <img
-                src="https://lnct.ac.in/wp-content/uploads/2021/05/LNCT-Group-of-colleges-20.jpg"
+                src={image}
                 alt="Team Working"
                 className="md:h-[32vw]"
               />
@@ -88,7 +84,7 @@ const Home1 = () => {
           <div ref={bottomLine} className="w-[95%] h-[1px] bg-black mb-16" />
         </div>
       </div>
-        </>
+          </>
   );
 };
 

@@ -1,87 +1,59 @@
-import React, { useRef, useEffect } from 'react';
-import '../App.css';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
-const images = [
-  { src: 'https://picsum.photos/id/1015/400/400', title: 'Library' },
-  { src: 'https://picsum.photos/id/1016/400/400', title: 'Classroom' },
-  { src: 'https://picsum.photos/id/1018/400/400', title: 'Lab' },
-  { src: 'https://picsum.photos/id/1024/400/400', title: 'Campus' },
-  { src: 'https://picsum.photos/id/1027/400/400', title: 'Auditorium' },
-  { src: 'https://picsum.photos/id/1035/400/400', title: 'Hallway' },
-  { src: 'https://picsum.photos/id/1040/400/400', title: 'Garden' },
+const titles = [
+  { title1: 'DIGITAL', title2: 'LIBRARY', image: 'https://lnctu.ac.in/wp-content/uploads/2021/05/School-of-Architecture-1-1.jpg', path: '/digital-library' },
+  { title1: 'HAPPY', title2: 'CLASSROOM', image: '', path: '/happy-classroom' },
+  { title1: 'HEALTH', title2: 'CARE', image: 'https://lnctu.ac.in/wp-content/uploads/2021/05/Best-Private-University-in-Central-India-1-1.jpg', path: '/health-care' },
+  { title1: 'LNCT', title2: 'CANTEEN', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdPjiBmlYI__afZWIwdDu-N1W_HYR4EPQjphUbC-4qEn972U62ZqFRlF2QcFBuLEgqh3Y&usqp=CAU', path: '/lnct-canteen' },
+  { title1: 'TRANS', title2: 'PORTATION', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfo5mqjGcvmowVQDEUn5bxRqAlODC2L_XDvg&s', path: '/transportation' },
+  { title1: 'SPORTS', title2: 'ACADEMY', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_BrYX7-FxH-UAx8QsW-08e0IqBPoaiVVZXQ&s', path: '/sports-academy' },
 ];
 
 const Gallery = () => {
-  const carouselRef = useRef(null);
-  const angle = 360 / images.length;
-  let startX = 0;
-  let currentRotation = 0;
+  const [hoveredIndex, setHoveredIndex] = useState(null);
+  const [position, setPosition] = useState({ x: 0, y: 0 });
+  const navigate = useNavigate();
 
-  useEffect(() => {
-    const container = carouselRef.current;
+  const handleMouseMove = e => setPosition({ x: e.clientX, y: e.clientY });
 
-    const handleMouseDown = (e) => {
-      startX = e.clientX;
-      container.style.cursor = 'grabbing';
-
-      const handleMouseMove = (e) => {
-        const delta = e.clientX - startX;
-        startX = e.clientX;
-        currentRotation += delta * 0.3;
-        container.style.transform = `translateZ(-1000px) rotateY(${currentRotation}deg)`;
-      };
-
-      const handleMouseUp = () => {
-        window.removeEventListener('mousemove', handleMouseMove);
-        window.removeEventListener('mouseup', handleMouseUp);
-        container.style.cursor = 'grab';
-      };
-
-      window.addEventListener('mousemove', handleMouseMove);
-      window.addEventListener('mouseup', handleMouseUp);
-    };
-
-    container.addEventListener('mousedown', handleMouseDown);
-
-    return () => {
-      container.removeEventListener('mousedown', handleMouseDown);
-    };
-  }, []);
+  const handleClick = path => {
+    navigate(path);
+  };
 
   return (
-    <section className="w-full h-screen bg-[#0a0510] flex items-center justify-center overflow-hidden">
-      <div
-        ref={carouselRef}
-        className="relative w-[500px] h-[500px]"
-        style={{
-          transformStyle: 'preserve-3d',
-          transform: 'translateZ(-1000px) rotateY(0deg)',
-          transition: 'transform 0.5s ease-out',
-          cursor: 'grab'
-        }}
-      >
-        {images.map((img, index) => {
-          const rotation = index * angle;
-          return (
-            <div
-              key={index}
-              className="absolute w-[240px] h-[300px] p-2 text-white"
-              style={{
-                transform: `rotateY(${rotation}deg) translateZ(1000px)`,
-                transformStyle: 'preserve-3d'
-              }}
-            >
-              <img
-                src={img.src}
-                alt={img.title}
-                className="w-full h-full object-cover rounded-xl border border-white shadow-lg"
-              />
-              <p className="text-center mt-2 text-lg font-semibold tracking-wide">{img.title}</p>
-            </div>
-          );
-        })}
+    <div className="container mx-auto px-4 py-8">
+      <h2 className="text-4xl font-bold mb-8 text-center">Campus Highlights</h2>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        {titles.map((item, idx) => (
+          <div
+            key={idx}
+            className="group relative cursor-pointer px-12 py-14 text-center"
+            onMouseEnter={() => setHoveredIndex(idx)}
+            onMouseLeave={() => setHoveredIndex(null)}
+            onMouseMove={handleMouseMove}
+            onClick={() => handleClick(item.path)}
+          >
+            <p className="text-lg font-medium text-gray-600">{item.title1}</p>
+            <p className="text-2xl font-bold text-gray-800">{item.title2}</p>
+            <img src={item.image} alt={`${item.title1} ${item.title2}`} className="md:hidden w-full h-40 object-cover mt-4" />
+
+            {hoveredIndex === idx && (
+              <div
+                className="fixed z-50 w-64 h-40 rounded-lg shadow-lg overflow-hidden border border-gray-300"
+                style={{ top: position.y + 20, left: position.x + 20 }}
+              >
+                <img
+                  src={item.image}
+                  alt={`${item.title1} ${item.title2}`}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            )}
+          </div>
+        ))}
       </div>
-    </section>
+    </div>
   );
 };
 

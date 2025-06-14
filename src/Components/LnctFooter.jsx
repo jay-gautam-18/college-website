@@ -1,4 +1,5 @@
 import React, { useLayoutEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 
@@ -9,7 +10,6 @@ const LnctFooter = () => {
 
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
-      // Animate brand and columns
       gsap.from(".footer-brand, .footer-column", {
         scrollTrigger: {
           trigger: ".footer-section",
@@ -23,7 +23,6 @@ const LnctFooter = () => {
         ease: "power2.out",
       });
 
-      // Animate horizontal line
       gsap.from(".horizontal-line", {
         scrollTrigger: {
           trigger: ".horizontal-line",
@@ -32,11 +31,10 @@ const LnctFooter = () => {
         scaleX: 0,
         transformOrigin: "left center",
         duration: 1,
-         delay: 0.2,
+        delay: 0.2,
         ease: "power2.out",
       });
 
-      // Animate vertical line
       gsap.from(".vertical-line", {
         scrollTrigger: {
           trigger: ".vertical-line",
@@ -45,12 +43,12 @@ const LnctFooter = () => {
         scaleY: 0,
         transformOrigin: "top center",
         duration: 1.5,
-         delay: 0.2,
+        delay: 0.2,
         ease: "power2.out",
       });
     }, footerRef);
 
-    return () => ctx.revert(); // Clean up animations
+    return () => ctx.revert();
   }, []);
 
   return (
@@ -58,26 +56,19 @@ const LnctFooter = () => {
       ref={footerRef}
       className="footer-section bg-[#f9f6ef] text-black px-8 py-12 overflow-hidden"
     >
-      {/* Top Section */}
-       <div
-        className="horizontal-line border-t border-black my-8"
-        style={{ height: "2px" }}
-      />
-       <div
-        className="horizontal-line border-t border-black my-8"
-        style={{ height: "2px" }}
-      />
+      <div className="horizontal-line border-t border-black my-8" style={{ height: "2px" }} />
+      <div className="horizontal-line border-t border-black my-8" style={{ height: "2px" }} />
+
       <div className="flex flex-col md:flex-row justify-between border-b border-black pb-12 relative">
-        {/* Left Brand */}
         <div className="footer-brand max-w-xs space-y-4">
           <div className="flex items-center space-x-4">
             <div className="w-4 h-4 border-[5px] border-black" />
-            <h2 className="text-2xl font-semibold">FYLLA</h2>
+            <h2 className="text-2xl font-semibold">LNCT GROUPS</h2>
           </div>
           <p>
-            Fylla Digital Agency<br />
-            Main Street 16<br />
-            Lisbon
+            Lnct Group of Colleges<br />
+            Madhya pradesh<br />
+            India
           </p>
           <div className="flex space-x-2 pt-2">
             {["TW", "IN", "BE"].map((label) => (
@@ -91,7 +82,6 @@ const LnctFooter = () => {
           </div>
         </div>
 
-        {/* Vertical Line */}
         <div className="relative hidden md:flex items-stretch px-10">
           <div
             className="vertical-line bg-black"
@@ -99,64 +89,81 @@ const LnctFooter = () => {
           />
         </div>
 
-        {/* Right Columns */}
         <div className="flex flex-wrap gap-10 mt-10 md:mt-0">
           {[
-            {
-              title: "Pages",
-              items: ["Home", "Services", "Studio", "Contact"],
-              extra: (
-                <button className="mt-2 px-4 py-2 bg-black text-white">
-                  MORE TEMPLATES
-                </button>
-              ),
-            },
-            {
-              title: "CMS",
-              items: [
-                "Work",
-                "Work Single",
-                "Blog",
-                "Blog Post",
-                "Shop",
-                "Shop Single",
-              ],
-            },
-            {
-              title: "Utility Pages",
-              items: [
-                "404 Error Page",
-                "Password Protected",
-                "Styleguide",
-                "Licensing",
-                "Changelog",
-              ],
-            },
+           {
+  title: "Colleges",
+  items: [
+    { label: "LNCT", path: "/lnct" },
+    { label: "LNCT&S", path: "/lnct-and-s" },
+    { label: "LNCTE", path: "/lncte" },
+    { label: "MBA", path: "/mba" },
+    { label: "MCA", path: "/mca" },
+    { label: "LNCT Indore", path: "/lnct-indore" },
+    { label: "LNCT Vidhyapeeth University", path: "/lnct-vidhyapeeth-university" },
+    { label: "LNCT Jabalpur", path: "/lnct-jabalpur" },
+    { label: "LNCT Bhopal", path: "/lnct-bhopal" },
+    { label: "LNCTU", path: "/lnctu" },
+    { label: "LNCT Shrihansh", path: "/lnct-shrihansh" },
+    { label: "CEC Bilaspur", path: "/cec-bilaspur" },
+    { label: "LNCT Pharmacy", path: "/lnct-pharmacy" },
+  ],
+},
+{
+  title: "Departments",
+  items: [
+    { label: "Civil Engineering", path: "/civil-engineering" },
+    { label: "Electrical and Electronic", path: "/electrical-and-electronic" },
+    { label: "Mechanical", path: "/mechanical" },
+    { label: "Electrical", path: "/electrical" },
+    { label: "Electronics and Communication", path: "/department-of-electronic-and-communication" },
+    { label: "Computer Science Engineering", path: "/computer-science-engineering" },
+    { label: "Information Technology", path: "/department-of-information-technology" },
+    { label: "Basic Science", path: "/department-of-basic-science" },
+  ],
+},
+{
+  title: "Important Links",
+  items: [
+    { label: "About", path: "/about" },
+    { label: "Admission Process", path: "/admission-process" },
+    { label: "Academic Calendar", path: "/academic-calendar" },
+    { label: "R&D", path: "/research-and-development" },
+    { label: "LN Universe", path: "/ln-universe" },
+  ],
+},
+{
+  title: "Contact Us",
+  items: [
+    { label: "Alumni Cell", path: "/alumni-cell" },
+    { label: "Feedback", path: "/feedback" }, // This route is not in Mainroutes, consider adding if needed
+    { label: "Support", path: "/support" },   // This route is also not in Mainroutes
+    { label: "Careers", path: "/careers" },   // Not defined in Mainroutes
+  ],
+}
+
           ].map((col, i) => (
             <div key={i} className="footer-column min-w-[150px]">
               <h3 className="text-lg font-semibold mb-2">{col.title}</h3>
               <ul className="space-y-1">
                 {col.items.map((item) => (
-                  <li key={item}>{item}</li>
+                  <li key={item.path}>
+                    <Link to={item.path} className="hover:underline">
+                      {item.label}
+                    </Link>
+                  </li>
                 ))}
-                {col.extra && <li>{col.extra}</li>}
               </ul>
             </div>
           ))}
         </div>
       </div>
 
-      {/* Horizontal Line */}
-      <div
-        className="horizontal-line border-t border-black my-8"
-        style={{ height: "2px" }}
-      />
+      <div className="horizontal-line border-t border-black my-8" style={{ height: "2px" }} />
 
-      {/* Bottom Text */}
       <div className="flex flex-col md:flex-row justify-between text-sm">
         <p>
-          © MADE BY <a href="#" className="underline">PAWEL GOLA</a> – POWERED BY{" "}
-          <a href="#" className="underline">WEBFLOW</a>
+          © MADE BY <a href="#" className="underline">BYTE-SLAYERS</a> – POWERED BY <a href="#" className="underline">LNCT</a>
         </p>
         <div className="flex space-x-6 pt-2 md:pt-0">
           <a href="#" className="underline">PRIVACY</a>

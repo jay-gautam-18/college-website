@@ -70,6 +70,17 @@ const ContactSection = () => {
         ease: 'power2.out',
         stagger: 0.2,
       });
+      gsap.to([ topLineRef.current], {
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: 'top 90%',
+        },
+        scaleX: 1,
+        transformOrigin: 'left center',
+        duration: 1,
+        ease: 'power2.out',
+        stagger: 0.2,
+      });
     });
 
     return () => ctx.revert();
@@ -81,10 +92,10 @@ const ContactSection = () => {
       className=" w-full px-4 md:px-10 py-20 relative"
     >
       {/* Top Horizontal Line */}
-      {/* <div
+      <div
         ref={topLineRef}
         className="absolute top-0 left-1/2 -translate-x-1/2 w-[90%] h-[1px] bg-black scale-x-0 origin-center"
-      ></div> */}
+      ></div>
 
       {/* Bottom Horizontal Line */}
       <div

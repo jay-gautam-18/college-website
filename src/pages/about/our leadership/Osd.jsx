@@ -1,34 +1,65 @@
-import React from 'react'
-import Home3 from './Home3'
-import { FaAws } from "react-icons/fa";
-import { SiCisco, SiGodaddy, SiVmware } from 'react-icons/si';
-import Ourservices from '../Ourservices';
-const Home2 = () => {
+import React, { useRef, useEffect ,useContext , useState} from 'react';
+import gsap from 'gsap';
+import ScrollTrigger from 'gsap/ScrollTrigger';
+gsap.registerPlugin(ScrollTrigger);
+import Nav from '../../../Components/Nav'
+import LnctFooter from '../../../Components/LnctFooter'
+import Home1 from '../../../Components/HomeComponets/Home1';
+import { mainContext } from '../../../Context/Maincontext';
 
+const Osd = () => {
+        
+const [selectedOSD, setSelectedOSD] = useState(null);
+
+  const {osdList} = useContext(mainContext); 
+ 
   return (
     <>
-    <div className=" py-8 px-4 ">
-        <div className="max-w-screen-xl mx-auto flex md:flex-row flex-col items-center  gap-8">
-            {/* Left Label */}
-            <div className="flex items-center md:border-none border-b-1 justify-center border-black gap-4 min-w-fit">
-            <span className="text-2xl mr-4 tracking-[1px] font-[350] mb-5">OUR Tie-Ups</span>
-            <div className="w-px md:block hidden h-18 bg-black" />
-            </div>
-            {/* Logos */}
-            <div className="flex flex-wrap justify-center gap-8 flex-1">
-            {/* Repeat this block for each client logo */}
-            <FaAws className='text-7xl mx-5' />
-            <SiCisco className='text-7xl mx-5' />
-            <SiVmware className='text-7xl mx-5' />
-            <SiGodaddy className='text-7xl mx-5' />
-            <img src="/logos/abstract.png" alt="Abstract" className="h-18 object-contain" />
-            <img src="/logos/vision-studio.png" alt="Vision Studio" className="h-18 object-contain" />
-            <img src="/logos/invision-square.png" alt="Invision Square" className="h-18 object-contain" />
-            </div>
+    <Nav/>
+   <Home1
+   image={"https://lnct.ac.in/wp-content/uploads/2024/01/31-Year-Ception-1024x1024.jpeg"}
+   heading={"Join The League of Achievers!"}
+   description={"LNCT Group of College is one of the Top engineering college in Bhopal, MP and Central India. LNCT Synonymous with excellence in higher education with 32+ Years of Academic Excellence and Discipline."}
+   />
+
+     <div className="max-w-4xl mx-auto my-10 p-4">
+      <h2 className="text-2xl font-semibold text-center mb-6">
+        OSD (Officer on Special Duty)
+      </h2>
+
+      <div className="overflow-x-auto">
+        <table className="w-full text-left border border-gray-300">
+          <thead>
+            <tr className="bg-gray-300">
+              <th className="py-2 px-4 font-semibold">COLLEGE NAME</th>
+              <th className="py-2 px-4 font-semibold">NAME</th>
+            </tr>
+          </thead>
+          <tbody>
+            {osdList.map((osd, idx) => (
+              <tr key={idx} className="border-t">
+                <td className="py-2 px-4">{osd.college}</td>
+                <td
+                  className="py-2 px-4 text-blue-600 cursor-pointer hover:underline"
+                  onClick={() => setSelectedOSD(idx === selectedOSD ? null : idx)}
+                >
+                  {osd.name}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      {selectedOSD !== null && (
+        <div className="mt-6 p-4 border-l-4 border-blue-500 bg-blue-50 rounded-md shadow">
+          <h3 className="text-lg font-semibold mb-2">{osdList[selectedOSD].name}</h3>
+          {osdList[selectedOSD].content}
         </div>
+      )}
     </div>
-    <Ourservices/>
-     <div className=" bg-[#fdfbf6] py-10 px-2">
+
+    <div className="  py-10 px-2">
     <div className="max-w-screen-xl mx-auto flex flex-col md:flex-row gap-10">
         
         {/* Left Heading */}
@@ -96,9 +127,9 @@ const Home2 = () => {
         </div>
     </div>
     </div>
-    <hr />
+    <LnctFooter/>
     </>
   )
 }
 
-export default Home2
+export default Osd
