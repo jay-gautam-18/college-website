@@ -6,7 +6,7 @@ import axios from 'axios';
 import { mainContext } from '../Context/Maincontext';
 import Nav from './Nav';
 
-const RegistrationForm = () => {
+const RegistrationForm = ({heading}) => {
     const {data , setdata} = useContext(mainContext)
     const navigate = useNavigate();
 
@@ -42,9 +42,8 @@ const RegistrationForm = () => {
 
     return (
         <>
-        <Nav/>
-        <div className="w-full max-w-2xl mx-auto border rounded-xl p-6 mt-10 shadow-xl">
-            <h2 className="text-3xl font-bold text-center mb-6 text-black">Register</h2>
+        <div className="w-full  max-w-2xl mx-auto border rounded-xl p-6 mt-10 shadow-xl">
+            <h2 className="text-3xl font-bold text-center mb-6 text-black">{heading}</h2>
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
 
                 <input
@@ -290,7 +289,7 @@ const RegistrationForm = () => {
                 </div>
                 {errors.agree && <p className="text-red-500">You must agree before submitting.</p>}
 
-                <button type="submit" className="bg-black text-white w-full py-3 rounded-md hover:bg-red-700 font-semibold">
+                <button type="submit" className="bg-black border text-white w-full py-3 rounded-md hover:bg-transparent hover:text-black font-semibold">
                     Register
                 </button>
             </form>

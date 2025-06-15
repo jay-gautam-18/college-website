@@ -51,7 +51,7 @@ const Home1 = ({image,heading,description}) => {
 
           {/* Left Text */}
           <div className="md:w-1/2 space-y-6 mt-5">
-            <h1 className="text-6xl md:text-8xl tracking-[1px] font-light leading-tighter">
+            <h1 className="text-5xl md:text-7xl tracking-[1px] font-light leading-tighter">
               {heading}
             </h1>
             <p className="text-3xl text-gray-700">

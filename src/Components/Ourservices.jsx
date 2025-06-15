@@ -105,7 +105,7 @@ const ContactSection = () => {
 
       <div className="max-w-[100%] mx-auto w-full flex flex-col md:flex-row items-center justify-between gap-10">
         {/* Left Text */}
-        <div className="md:w-4/5 h-[70vh]  flex flex-col">
+        <div className="md:w-4/5 h-[90vh]  flex flex-col">
           <p className=" text-4xl ">no. <span className='text-[20vh] font-[sans] '>1</span> <small className='text-2xl font-bold pb-4'>Private enginnering college ranked in Madhya Pradesh</small></p>
           
           <div>

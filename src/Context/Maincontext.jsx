@@ -73,7 +73,7 @@ const Maincontext = (props) => {
           subLinks: [
             { label: 'EOA 2024-28', path: '/about/aicte/eoa-2024-28' },
             { label: 'Approval', path: '/about/aicte/approval' },
-            { label: 'PMKVY guidlines', path: '/about/aicte/pmkvygudlines' },
+            { label: 'PMKVY guidlines', path: 'https://lnct.ac.in/wp-content/uploads/2019/05/PMKVY.pdf' },
             { label: 'AICTE Mo Us', path: '/about/aicte/aictemous' },
             { label: 'aicte pragati', path: '/about/aicte/aictepragati' },
             { label: 'pmkvy course details', path: '/about/aicte/pmkvycoursedetails' },
@@ -83,7 +83,7 @@ const Maincontext = (props) => {
         {
           label: 'RGPV',
           path: '/about/rgpv',
-          subLinks: [{ label: 'MOU Courses with Coursera', path: '/about/rgpv/mou-courses' }],
+          subLinks: [{ label: 'MOU Courses with Coursera', path: 'https://lnct.ac.in/wp-content/uploads/2019/12/MOOC-Courses-with-credits-for-B.Tech-RGPV-students.pdf' }],
         },
         { label: 'Academic Calendar', path: '/about/academic-calendar', subLinks: [] },
         { label: 'Hostel Allotment', path: '/about/hostel-allotment', subLinks: [] },
@@ -95,7 +95,7 @@ const Maincontext = (props) => {
             { label: 'Shift 2', path: '/about/bus-routes/shift-2' },
           ],
         },
-        { label: 'International Journal of LNCT', path: '/about/international-journal-of-lnct', subLinks: [] },
+        { label: 'International Journal of LNCT', path: 'https://www.ijlnct.org/', subLinks: [] },
       ],
     },
     {
@@ -108,12 +108,12 @@ const Maincontext = (props) => {
         { label: 'MBA', path: '/colleges/mba', subLinks: [] },
         { label: 'MCA', path: '/colleges/mca', subLinks: [] },
         { label: 'LNCT Indore', path: '/colleges/lnct-indore', subLinks: [] },
-        { label: 'LNCT Vidhyapeeth University', path: '/colleges/lnct-vidhyapeeth-university', subLinks: [] },
-        { label: 'LNCT Jabalpur', path: '/colleges/lnct-jabalpur', subLinks: [] },
-        { label: 'LNCT Bhopal', path: '/colleges/lnct-bhopal', subLinks: [] },
-        { label: 'LNCTU', path: '/colleges/lnctu', subLinks: [] },
-        { label: 'LNCT Shrihansh', path: '/colleges/lnct-shrihansh', subLinks: [] },
-        { label: 'CEC Bilaspur', path: '/colleges/cec-bilaspur', subLinks: [] },
+        { label: 'LNCT Vidhyapeeth University', path: 'https://lnctvu.ac.in/', subLinks: [] },
+        { label: 'LNCT Jabalpur', path: 'https://lnctuj.com/', subLinks: [] },
+        { label: 'LNCT Bhopal', path: 'https://www.jnctbhopal.ac.in/', subLinks: [] },
+        { label: 'LNCTU', path: 'https://lnctu.ac.in/?_gl=1*zvohrq*_gcl_au*MTM0NDI4MzE4OC4xNzQ5NTQ4MDQx*_ga*ODY4NzMwODE0LjE3NDkxNDI4MjI.*_ga_KVSH19Y64K*czE3NDk5MzA2NzgkbzE5JGcxJHQxNzQ5OTM1NDg3JGo3JGwwJGgxNjE3OTUzMjE2', subLinks: [] },
+        { label: 'LNCT Shrihansh', path: 'https://www.lnctrishiraj.ac.in/', subLinks: [] },
+        { label: 'CEC Bilaspur', path: 'https://cecbilaspur.ac.in/', subLinks: [] },
         { label: 'LNCT Pharmacy', path: '/colleges/lnct-pharmacy', subLinks: [] },
       ],
     },
@@ -140,18 +140,18 @@ const Maincontext = (props) => {
         },
       ],
     },
-    {
-      title: 'Admission',
-      description: 'Details and procedures related to admission at LNCT.',
-      links: [
-        { label: 'Admission Process', path: '/admission/admission-process', subLinks: [] },
-        { label: 'Admission Enquiry', path: '/admission/admission-enquiry', subLinks: [] },
-        { label: 'T&C Online Payment', path: '/admission/t-and-c-online-payment', subLinks: [] },
-        { label: 'Fee Refund Policy', path: '/admission/fee-refund-policy', subLinks: [] },
-        { label: 'Download Prospectus', path: '/admission/download-prospectus', subLinks: [] },
-        { label: 'Fee Structure', path: '/admission/fee-structure', subLinks: [] },
-      ],
-    },
+   {
+    title: 'Admission',
+    description: 'Details and procedures related to admission at LNCT.',
+    links: [
+      { label: 'Admission Process', path: '/admission/admission-process' },
+      { label: 'Admission Enquiry', path: '/admission/admission-enquiry' },
+      { label: 'T&C Online Payment', path: '/admission/t-and-c-online-payment' },
+      { label: 'Fee Refund Policy', path: '/admission/fee-refund-policy' },
+      { label: 'Download Prospectus', path: 'https://lnct.ac.in/wp-content/uploads/2025/03/LNCT-Brochure.pdf' },
+      { label: 'Fee Structure', path: 'https://lnct.ac.in/wp-content/uploads/2024/07/LNCT-fee-structure.pdf' },
+    ],
+  },
     {
       title: 'Placement',
       description: 'Placement cell and student career opportunities.',
@@ -325,7 +325,7 @@ const Maincontext = (props) => {
   // Add more leaders if needed
 ])
 
-const osdlist =   [
+const osdList =   [
     {
   college: 'GROUP OSD',
   name: 'Dr. SUNIL KUMAR SINGH',
@@ -781,7 +781,7 @@ const osdlist =   [
 
   ];
   return (
-    <mainContext.Provider value={{ Nav, setNav, data, setdata, values, setvalues, blogs, setnews ,leaders,osdlist ,principalList }}>
+    <mainContext.Provider value={{ Nav, setNav, data, setdata, values, setvalues, blogs, setnews ,leaders, osdList , principalList }}>
       {props.children}
     </mainContext.Provider>
   );

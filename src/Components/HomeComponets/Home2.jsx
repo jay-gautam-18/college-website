@@ -1,34 +1,15 @@
 import React from 'react'
 import Home3 from './Home3'
 import { FaAws } from "react-icons/fa";
-import { SiCisco, SiGodaddy, SiVmware } from 'react-icons/si';
 import Ourservices from '../Ourservices';
+import OurTiesUps from './OurTiesUps';
 const Home2 = () => {
 
   return (
     <>
-    <div className=" py-8 px-4 ">
-        <div className="max-w-screen-xl mx-auto flex md:flex-row flex-col items-center  gap-8">
-            {/* Left Label */}
-            <div className="flex items-center md:border-none border-b-1 justify-center border-black gap-4 min-w-fit">
-            <span className="text-2xl mr-4 tracking-[1px] font-[350] mb-5">OUR Tie-Ups</span>
-            <div className="w-px md:block hidden h-18 bg-black" />
-            </div>
-            {/* Logos */}
-            <div className="flex flex-wrap justify-center gap-8 flex-1">
-            {/* Repeat this block for each client logo */}
-            <FaAws className='text-7xl mx-5' />
-            <SiCisco className='text-7xl mx-5' />
-            <SiVmware className='text-7xl mx-5' />
-            <SiGodaddy className='text-7xl mx-5' />
-            <img src="/logos/abstract.png" alt="Abstract" className="h-18 object-contain" />
-            <img src="/logos/vision-studio.png" alt="Vision Studio" className="h-18 object-contain" />
-            <img src="/logos/invision-square.png" alt="Invision Square" className="h-18 object-contain" />
-            </div>
-        </div>
-    </div>
+    <OurTiesUps/>
     <Ourservices/>
-     <div className=" bg-[#fdfbf6] py-10 px-2">
+     <div className="  py-10 px-2">
     <div className="max-w-screen-xl mx-auto flex flex-col md:flex-row gap-10">
         
         {/* Left Heading */}

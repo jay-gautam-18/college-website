@@ -82,7 +82,7 @@ const NewsMedia = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#f8f6ef] px-4 sm:px-6 py-12 sm:py-16">
+    <div className="min-h-screen  px-4 sm:px-6 py-12 sm:py-16">
       <div ref={topLine} className="md:w-[90%] hidden md:block  h-[1px] bg-black mb-6 mx-auto lg:overflow-hidden" />
       <h2 className="text-3xl sm:text-7xl font-bold text-center mb-10 sm:mb-12">News & Media</h2>
       <div ref={bottomLine} className="md:w-[90%] hidden md:block h-[1px] bg-black mb-10 overflow-hidden sm:mb-16 mx-auto" />

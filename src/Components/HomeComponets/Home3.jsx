@@ -37,7 +37,7 @@ const Home3 = () => {
     <div className="min-h-screen w-full   px-4 py-16">
       <div className="w-full mx-auto flex flex-col md:flex-row  ">
         {/* Left Static Side */}
-        <div className="w-full md:w-2/5 md:sticky md:top-24 md:h-[calc(50vh-6rem)] flex flex-col justify-center p-6">
+        <div className="w-full md:w-2/5 md:sticky md:top-24 md:h-[calc(70vh-6rem)] flex flex-col justify-center p-6">
             <div className="mr-5 md:w-1/3 sticky space-y-10">
                 <div>
                     <h2 className="md:text-7xl text-5xl font-[400] md:w-[30vw] leading-tight">WHY CHOOSE OUR COLLEGE?</h2>

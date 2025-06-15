@@ -54,7 +54,7 @@ const LnctFooter = () => {
   return (
     <footer
       ref={footerRef}
-      className="footer-section bg-[#f9f6ef] text-black px-8 py-12 overflow-hidden"
+      className="footer-section  text-black px-8 py-12 overflow-hidden"
     >
       <div className="horizontal-line border-t border-black my-8" style={{ height: "2px" }} />
       <div className="horizontal-line border-t border-black my-8" style={{ height: "2px" }} />
@@ -66,9 +66,9 @@ const LnctFooter = () => {
             <h2 className="text-2xl font-semibold">LNCT GROUPS</h2>
           </div>
           <p>
-            Lnct Group of Colleges<br />
-            Madhya pradesh<br />
-            India
+            Fylla Digital Agency<br />
+            Main Street 16<br />
+            Lisbon
           </p>
           <div className="flex space-x-2 pt-2">
             {["TW", "IN", "BE"].map((label) => (
@@ -91,57 +91,57 @@ const LnctFooter = () => {
 
         <div className="flex flex-wrap gap-10 mt-10 md:mt-0">
           {[
-           {
-  title: "Colleges",
-  items: [
-    { label: "LNCT", path: "/lnct" },
-    { label: "LNCT&S", path: "/lnct-and-s" },
-    { label: "LNCTE", path: "/lncte" },
-    { label: "MBA", path: "/mba" },
-    { label: "MCA", path: "/mca" },
-    { label: "LNCT Indore", path: "/lnct-indore" },
-    { label: "LNCT Vidhyapeeth University", path: "/lnct-vidhyapeeth-university" },
-    { label: "LNCT Jabalpur", path: "/lnct-jabalpur" },
-    { label: "LNCT Bhopal", path: "/lnct-bhopal" },
-    { label: "LNCTU", path: "/lnctu" },
-    { label: "LNCT Shrihansh", path: "/lnct-shrihansh" },
-    { label: "CEC Bilaspur", path: "/cec-bilaspur" },
-    { label: "LNCT Pharmacy", path: "/lnct-pharmacy" },
-  ],
-},
-{
-  title: "Departments",
-  items: [
-    { label: "Civil Engineering", path: "/civil-engineering" },
-    { label: "Electrical and Electronic", path: "/electrical-and-electronic" },
-    { label: "Mechanical", path: "/mechanical" },
-    { label: "Electrical", path: "/electrical" },
-    { label: "Electronics and Communication", path: "/department-of-electronic-and-communication" },
-    { label: "Computer Science Engineering", path: "/computer-science-engineering" },
-    { label: "Information Technology", path: "/department-of-information-technology" },
-    { label: "Basic Science", path: "/department-of-basic-science" },
-  ],
-},
-{
-  title: "Important Links",
-  items: [
-    { label: "About", path: "/about" },
-    { label: "Admission Process", path: "/admission-process" },
-    { label: "Academic Calendar", path: "/academic-calendar" },
-    { label: "R&D", path: "/research-and-development" },
-    { label: "LN Universe", path: "/ln-universe" },
-  ],
-},
-{
-  title: "Contact Us",
-  items: [
-    { label: "Alumni Cell", path: "/alumni-cell" },
-    { label: "Feedback", path: "/feedback" }, // This route is not in Mainroutes, consider adding if needed
-    { label: "Support", path: "/support" },   // This route is also not in Mainroutes
-    { label: "Careers", path: "/careers" },   // Not defined in Mainroutes
-  ],
-}
-
+            {
+              title: "Colleges",
+              items: [
+                { label: "LNCT", path: "/lnct" },
+                { label: "LNCT&S", path: "/lnct-and-s" },
+                { label: "LNCTE", path: "/lncte" },
+                { label: "MBA", path: "/mba" },
+                { label: "MCA", path: "/mca" },
+                { label: "LNCT Indore", path: "/lnct-indore" },
+                { label: "LNCT Vidhyapeeth University", path: "/lnct-vidhyapeeth-university" },
+                { label: "LNCT Jabalpur", path: "/lnct-jabalpur" },
+                { label: "LNCT Bhopal", path: "/lnct-bhopal" },
+                { label: "LNCTU", path: "/lnctu" },
+                { label: "LNCT Shrihansh", path: "/lnct-shrihansh" },
+                { label: "CEC Bilaspur", path: "/cec-bilaspur" },
+                { label: "LNCT Pharmacy", path: "/lnct-pharmacy" },
+              ],
+            },
+            {
+              title: "Departments",
+              items: [
+                { label: "Civil Engineering", path: "/civil-engineering" },
+                { label: "Electrical and Electronic", path: "/electrical-and-electronic" },
+                { label: "Mechanical", path: "/mechanical" },
+                { label: "Electrical", path: "/electrical" },
+                { label: "Electronics and Communication", path: "/department-of-electronic-and-communication" },
+                { label: "Computer Science Engineering", path: "/computer-science-engineering" },
+                { label: "Information Technology", path: "/department-of-information-technology" },
+                { label: "Basic Science", path: "/department-of-basic-science" },
+              ],
+            },
+            {
+              title: "Important Links",
+              items: [
+                { label: "About", path: "/about" },
+                { label: "Admission Process", path: "/admission-process" },
+                { label: "Academic Calendar", path: "/academic-calendar" },
+                { label: "R&D", path: "/research-and-development" },
+                { label: "LN Universe", path: "/ln-universe" },
+              ],
+            },
+            {
+              title: "Contact Us",
+              items: [
+                { label: "Contact", path: "/contact" },
+                { label: "Feedback", path: "/feedback" },
+                { label: "FAQ", path: "/faq" },
+                { label: "Help Desk", path: "/help-desk" },
+                { label: "Support", path: "/support" },
+              ],
+            },
           ].map((col, i) => (
             <div key={i} className="footer-column min-w-[150px]">
               <h3 className="text-lg font-semibold mb-2">{col.title}</h3>

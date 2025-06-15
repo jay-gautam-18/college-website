@@ -126,7 +126,7 @@ const LatestNews = () => {
   return (
     <section
       ref={sectionRef}
-      className="bg-[#f9f6ef] w-full py-20 px-5 md:px-16  relative"
+      className=" w-full py-20 px-5 md:px-16  relative"
     >
       {/* Smooth Cursor */}
       <div
